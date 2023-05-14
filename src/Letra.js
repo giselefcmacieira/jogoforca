@@ -68,13 +68,13 @@ export default function Letra(props){
     if (hab && (!habLetras || letrasUsadas.includes(letra))){
         return(
             <>
-                <button disabled className="letra">{letra}</button>
+                <button data-test="letter" disabled className="letra">{letra}</button>
             </>
         )
     }else if(habLetras){
         return(
             <>
-                <button onClick={() => adicionarLetra(letra)} className="letra">{letra}</button>
+                <button data-test="letter" onClick={() => adicionarLetra(letra)} className="letra">{letra}</button>
             </>
         )
     }

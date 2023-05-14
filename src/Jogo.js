@@ -22,12 +22,12 @@ export default function Jogo(props){
     }
     return(
         <div className='container-jogo'>
-            <img className= "forca" src={imgForca} alt="forca"/>
+            <img data-test="game-image" className= "forca" src={imgForca} alt="forca"/>
             <div className='container-botao-palavra'>
-                <button disabled={(habLetras === true ? "disabled" : "")} onClick={iniciarJogo} className='botao'>
+                <button data-test="choose-word" disabled={(habLetras === true ? "disabled" : "")} onClick={iniciarJogo} className='botao'>
                     Escolher palavra
                 </button>
-                <p className={`palavra ${classVenceuOuPerdeu}`}>{palavra}</p>
+                <p data-test="word" className={`palavra ${classVenceuOuPerdeu}`}>{palavra}</p>
             </div>
         </div>
     )
