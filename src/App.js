@@ -6,11 +6,10 @@ import React from 'react';
 import forcainicio from './assets/img/forca0.png';
 import palavras from "./palavras";
 
-const palavraAleatoria = palavras[Math.floor(Math.random() * palavras.length)];
-const arrayPalavraAleatoria = palavraAleatoria.split('');
-console.log(arrayPalavraAleatoria)
+
 export default function App() {
-  const [arrayPalavra, setArrayPalavra] = React.useState(arrayPalavraAleatoria);
+  //const [arrayPalavraAleatoria, setArrayPalavraAleatoria]= React.useState([]);
+  const [arrayPalavra, setArrayPalavra] = React.useState([]);
   const [palavra, setPalavra] = React.useState([]);
   const [habLetras, setHabLetras] = React.useState(false);
   const [erros, setErros] = React.useState('');
@@ -18,14 +17,17 @@ export default function App() {
   const [letrasUsadas, setLetrasUsadas] = React.useState([]);
   const [letrasCorretasSelecionadas, setLetrasCorretasSelecionadas] = React.useState([]);
   const [classVenceuOuPerdeu, setClassVenceuOuPerdeu] = React.useState(''); 
+  console.log(arrayPalavra);
   return (
     <>
-      <Jogo habLetras={habLetras} setHabLetras={setHabLetras} 
+      <Jogo palavras={palavras}
+      //arrayPalavraAleatoria ={arrayPalavraAleatoria} setArrayPalavraAleatoria = {setArrayPalavraAleatoria}
+      habLetras={habLetras} setHabLetras={setHabLetras} 
       erros={erros} setErros={setErros} 
       imgForca={imgForca} setImgForca={setImgForca}
       arrayPalavra={arrayPalavra} setArrayPalavra={setArrayPalavra}
       palavra={palavra} setPalavra={setPalavra}
-      letrasCorretasSelecionadas={letrasCorretasSelecionadas} setLetrasCorretasSelecionadas={setLetrasCorretasSelecionadas}
+      letrasUsadas={letrasUsadas} setLetrasUsadas={setLetrasUsadas}
       classVenceuOuPerdeu ={classVenceuOuPerdeu} setClassVenceuOuPerdeu={setClassVenceuOuPerdeu}/>
 
       <Letras habLetras={habLetras} setHabLetras={setHabLetras} 
